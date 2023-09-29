@@ -1,1 +1,36 @@
-rgbLEDTEMPLATE (25,192,64,300);
+// Turn LEAD on for 2 seconds and off for 1 
+
+
+// Name LEAD VARIABLES
+int redPin = 9;
+int greenPin = 10;
+int bluePin = 11;
+
+// Set up pins as output.
+void setup() {
+ // set up LEaD AS OUTPUT
+ pinMode(redPin,OUTPUT);
+ pinMode(greenPin,OUTPUT);
+ pinMode(bluePin,OUTPUT);
+
+}
+
+void loop() {
+   rgbLEDTEMPLATE (255,0,0,1000);
+   rgbLEDTEMPLATE (0,255,0,1000);
+   rgbLEDTEMPLATE (0,0,255,1000);
+   rgbLEDTEMPLATE (188,0,255,300);
+   rgbLEDTEMPLATE (25,192,164,300);
+   rgbLEDTEMPLATE (25,192,64,300);
+   rgbLEDTEMPLATE (25,92,192,300);
+}
+/* Turn RGB LED any color.
+Parameters: require user to pass signal strenghth (0-255) for each pin, as well as 
+desired delay time (Milliseconds.)
+  */
+  void rgbLEDTEMPLATE (int rSignal, int bSignal, int gSignal, int delayTime){
+    analogWrite(redPin, rSignal);
+    analogWrite(greenPin, gSignal);
+    analogWrite(bluePin, bSignal);
+    delay (delayTime);
+  }
